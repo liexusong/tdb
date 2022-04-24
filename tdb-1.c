@@ -13,7 +13,7 @@ void load_executable_file(const char *target_file)
     ptrace(PTRACE_TRACEME, 0, 0, 0);
  
     /* 2) 加载并且执行被调试的程序可执行文件 */
-    execl(target_file, target_file, 0);
+    execl(target_file, target_file, NULL);
 }
 
 void send_debug_command(pid_t debug_pid)
